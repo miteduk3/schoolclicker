@@ -1,0 +1,26 @@
+body {
+    background-color: lightgrey;
+}
+
+h2 {
+    color:  purple;
+}
+button {
+    color: aqua;
+}
+h3 {
+    border: solid;
+    font-size: 40px;
+}
+h4 {
+    border: double;
+    font-size: 35px;
+}
+h5 {
+    border: dotted;
+    font-size: 25px;
+}
+h6 {
+    border: dashed;
+    font-size: 20px;
+}

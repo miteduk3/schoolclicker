@@ -1,0 +1,95 @@
+
+<!--looking at my code?? thats not poggers :(-->
+
+
+
+
+<!--script that tells the program, "hey, no matter what, this is the starting value i could change that..."-->
+<script>
+    function update() {
+        document.getElementById('text').value = cookiecount;
+            document.title = cookiecount + " Cookies";
+            document.getElementById('ammountClicker').innerHTML = "you own " + autoClicker + " auto clickers";
+            document.getElementById(costClicker).innerHTML = ((autoClicker+1) * 12) + " cookies";
+    }
+    var cookiecount = 0;
+    var autoClicker = 0;
+
+    function timer() {
+         cookiecount = cookiecount + autoClicker;
+         update
+    }
+    setInterval(timer, 1000)
+</script>
+<link rel="stylesheet" href="layout.css">
+
+
+<html>
+<head><title>Cookie game</title></head>
+<body>
+<h2>newest update!: leaderboard! scroll below to figure out</h2>
+<!--just the image using the code for on click, which uses the function add-->
+    <a href=# onclick="add()"><img src="cookies.jpg"></a>
+    <br><br>
+    You Have:
+    <input type="text" id="text" disable style= text-align:center>
+    <!--function that adds 1 to the tally-->
+    <script>
+        function add() {
+            cookiecount = cookiecount + 1
+            update()
+        }
+
+
+    </script>
+    Cookies
+    <br><br>
+<!--save script uses getElementById to value = cookies, saves to local storage on pc-->
+<button><a href="#" onClick="save()">Save</a></button>
+<button><a href="#" onClick="load()">Load</a></button>
+<br>
+
+<p>auto clickers are being fixed, they dont auto update the value of the box, when you CLICK THE COOKIE, the value updates hoever many times the timer has surpassed,
+    essesntially, every second 1 cookie is gained, if you dont click for 10 seconds, you gain 10 cookies and one extra, since you clicked
+</p>
+<p>buy one auto clicker</p>
+<button><a href="#" onClick="buyAutoClicker()"><img src="fooniautoclickerimage.jpg" width="100"></a></button>
+<p id="costClicker">12 Cookies "cant make this work right now, the way this works right NOW, you need to obtain 12 MORE to buy another" - will </p>
+<p id="ammountClicker">You own 0 auto clickers</p>
+<script>
+    function save() {
+        localStorage.setItem("cookiecount", cookiecount);
+        localStorage.setItem("autoClicker", autoClicker);
+    }
+    function load() {
+        cookiecount = localStorage.getItem("cookiecount");
+        cookiecount = parseInt(cookiecount);
+        autoClicker = localStorage.getItem("autoClicker");
+        autoClicker = parseInt(autoClicker);
+        update()
+    }
+    function buyAutoClicker() {
+        if (cookiecount >= (autoClicker+1) * 12) {
+            cookiecount = cookiecount - (autoClicker+1 * 12);
+            autoClicker = autoClicker + 1;
+            update()
+        }
+    }
+</script>
+<br><br>
+<h2>more upgrades coming soon!</h2>
+</body>
+<br>
+
+<h2>leaderboard: please email wsbaker25@student.atasusd.org with a screenshot of your score to update</h2>
+<h3>1st place! held by "name" score: to be fufilled!</h3>
+<h4>2nd place held by "name" score: to be fufilled!</h4>
+<h5>3rd place held by "name" score: to be fufilled!</h5>
+<h6>4th held by "name" score: to be fufilled</h6>
+<h6>5th held by "name" score: to be fufilled</h6>
+<h6>6th held by "name" score: to be fufilled</h6>
+<h6>7thth held by "name" score: to be fufilled</h6>
+<h6>8thth held by "name" score: to be fufilled</h6>
+<h6>9thth held by "name" score: to be fufilled</h6>
+<h6>10th held by "name" score: to be fufilled</h6>
+</html>
